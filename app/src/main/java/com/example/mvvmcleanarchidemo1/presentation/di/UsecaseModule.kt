@@ -14,7 +14,7 @@ class UsecaseModule {
 
     @Singleton
     @Provides
-    fun provideHeadlineUsecase (gamesRepo:GamesRepository):GamesUsecase{
+    fun provideGamesUsecase (gamesRepo:GamesRepository):GamesUsecase{
         return GamesUsecase(gamesRepo)
     }
 }
