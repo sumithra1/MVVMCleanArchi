@@ -2,26 +2,21 @@ package com.example.mvvmcleanarchidemo1.presentation.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.mvvmcleanarchidemo1.R
 import com.example.mvvmcleanarchidemo1.data.model.Amiibo
-import com.example.mvvmcleanarchidemo1.data.model.GamesAPIResponseMario
 import com.example.mvvmcleanarchidemo1.databinding.GamesListItemBinding
-import java.lang.System.load
 import javax.inject.Inject
 
-class GamesAdapter @Inject constructor(val context:Context,private val gamesItem:ArrayList<Amiibo>):RecyclerView.Adapter<GamesAdapter.MyviewHolder>() {
+class GamesAdapter @Inject constructor(val context:Context,private val gamesItem:ArrayList<Amiibo>):RecyclerView.Adapter<GamesAdapter.MyViewHolder>() {
 
     fun setData(newData:List<Amiibo>){
         gamesItem.clear()
         gamesItem.addAll(newData)
         notifyDataSetChanged()
     }
-    class MyviewHolder(val binding:GamesListItemBinding):RecyclerView.ViewHolder(binding.root) {
+    class MyViewHolder(val binding:GamesListItemBinding):RecyclerView.ViewHolder(binding.root) {
 
         fun bind(games: Amiibo){
            binding.series.text=games.amiiboSeries
@@ -31,12 +26,12 @@ class GamesAdapter @Inject constructor(val context:Context,private val gamesItem
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyviewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val binding=GamesListItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-        return MyviewHolder(binding)
+        return MyViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: MyviewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
     val postbind=gamesItem[position]
         holder.bind(postbind)
     }

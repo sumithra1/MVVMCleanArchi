@@ -39,10 +39,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
     private fun attachObserver(){
-        viewmodel.getGamesData()
-        viewmodel.gamesdetails.observe(this, Observer {
-            it.data
-                ?.amiibo?.let { it1 -> myAdapter?.setData(it1) }
+        val responseLiveData =viewmodel.getGamesData()
+        responseLiveData.observe(this, Observer {
+//            it.data
+//                ?.amiibo?.let { it1 -> myAdapter?.setData(it1) }
+            if (it!=null){
+                myAdapter?.setData(it)
+            }
         })
     }
     private fun initView(){

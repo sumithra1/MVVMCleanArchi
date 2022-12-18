@@ -2,7 +2,7 @@ package com.example.mvvmcleanarchidemo1.presentation.di
 
 import com.example.mvvmcleanarchidemo1.data.api.GamesAPIService
 import com.example.mvvmcleanarchidemo1.data.repository.datasorceImpl.GamesRemoteDatasourceImpl
-import com.example.mvvmcleanarchidemo1.data.repository.datasource.GamesRemotedatasource
+import com.example.mvvmcleanarchidemo1.data.repository.datasource.GamesRemoteDatasource
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,7 +15,7 @@ class RemoteDataModule
 {
     @Singleton
     @Provides
-    fun provideGamesRemoteDataSource(gamesAPIService: GamesAPIService):GamesRemotedatasource{
+    fun provideGamesRemoteDataSource(gamesAPIService: GamesAPIService):GamesRemoteDatasource{
         return GamesRemoteDatasourceImpl(gamesAPIService)
     }
 }

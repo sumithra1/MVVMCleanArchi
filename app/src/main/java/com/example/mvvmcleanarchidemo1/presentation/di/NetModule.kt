@@ -13,9 +13,8 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class NetModule {
-
     @Singleton
-@Provides
+    @Provides
 
     fun provideRetrofit() :Retrofit
 {
