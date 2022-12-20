@@ -1,9 +1,9 @@
-package com.example.mvvmcleanarchidemo1.data.model
+package com.example.data.models
 
 
 import com.google.gson.annotations.SerializedName
 
-data class GamesAPIResponseMario(
+data class GamesAPIResponse(
     @SerializedName("amiibo")
     val amiibo: List<Amiibo>
 )

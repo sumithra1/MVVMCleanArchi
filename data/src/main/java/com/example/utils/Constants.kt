@@ -1,4 +1,4 @@
-package com.example.mvvmcleanarchidemo1.data.util
+package com.example.utils
 
 class Constants {
     companion object{

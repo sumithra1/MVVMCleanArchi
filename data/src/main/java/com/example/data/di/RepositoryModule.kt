@@ -1,8 +1,9 @@
 package com.example.mvvmcleanarchidemo1.presentation.di
 
-import com.example.mvvmcleanarchidemo1.data.repository.GamesRepoImpl
-import com.example.mvvmcleanarchidemo1.data.repository.datasource.GamesRemoteDatasource
-import com.example.mvvmcleanarchidemo1.domain.repository.GamesRepository
+import com.example.data.repository.GamesRepoImpl
+import com.example.data.repository.datasource.RemoteDataSource
+import com.example.domain.repository.GamesRepo
+
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,7 +16,7 @@ import javax.inject.Singleton
 class RepositoryModule {
     @Singleton
     @Provides
-    fun provideGamesRepository(gamesRemotedatasource: GamesRemoteDatasource):GamesRepository{
+    fun provideGamesRepository(gamesRemotedatasource: RemoteDataSource): GamesRepo {
         return  GamesRepoImpl(gamesRemotedatasource)
     }
 }
