@@ -1,4 +1,4 @@
-package com.example.mvvmcleanarchidemo1.presentation.di
+package com.example.data.di
 
 import com.example.data.repository.GamesRepoImpl
 import com.example.data.repository.datasource.RemoteDataSource
@@ -16,7 +16,7 @@ import javax.inject.Singleton
 class RepositoryModule {
     @Singleton
     @Provides
-    fun provideGamesRepository(gamesRemotedatasource: RemoteDataSource): GamesRepo {
-        return  GamesRepoImpl(gamesRemotedatasource)
+    fun provideGamesRepository(gamesRemoteDatasource: RemoteDataSource): GamesRepo {
+        return GamesRepoImpl(gamesRemoteDatasource)
     }
 }

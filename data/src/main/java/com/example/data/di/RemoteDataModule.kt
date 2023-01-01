@@ -1,4 +1,4 @@
-package com.example.mvvmcleanarchidemo1.presentation.di
+package com.example.data.di
 
 import com.example.data.api.GamesApiService
 
@@ -14,11 +14,10 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class RemoteDataModule
-{
+class RemoteDataModule {
     @Singleton
     @Provides
-    fun provideGamesRemoteDataSource(gamesAPIService: GamesApiService):RemoteDataSource{
+    fun provideGamesRemoteDataSource(gamesAPIService: GamesApiService): RemoteDataSource {
         return RemoteDataSourceImpl(gamesAPIService)
     }
 

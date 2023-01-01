@@ -16,17 +16,15 @@ class NetModule {
     @Singleton
     @Provides
 
-    fun provideRetrofit() : Retrofit
-    {
-        return Retrofit.Builder().addConverterFactory(GsonConverterFactory.create()).
-        baseUrl(Constants.BASE_URL)
+    fun provideRetrofit(): Retrofit {
+        return Retrofit.Builder().addConverterFactory(GsonConverterFactory.create())
+            .baseUrl(Constants.BASE_URL)
             .build()
     }
+
     @Singleton
     @Provides
-    fun provideGampesApiService(retrofit: Retrofit):GamesApiService {
+    fun provideGamesApiService(retrofit: Retrofit): GamesApiService {
         return retrofit.create(GamesApiService::class.java)
-
-
     }
 }
