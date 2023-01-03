@@ -23,15 +23,15 @@ class GameViewModelTest {
     private lateinit var gamesViewModel: GameViewModel
     private lateinit var fakeUseCase: GetGamesUseCase
     private lateinit var fakeNetworkService: GameFakeService
-    private lateinit var accountRepository: GamesRepo
+    private lateinit var gameRepository: GamesRepo
 
 
 
     @Before
     fun setup() {
         fakeNetworkService = GameFakeService(FakeDataGenerator.amiibo)
-        accountRepository = GamesRepoImpl(RemoteDataSourceImpl(fakeNetworkService))
-        fakeUseCase = GetGamesUseCase(accountRepository)
+        gameRepository = GamesRepoImpl(RemoteDataSourceImpl(fakeNetworkService))
+        fakeUseCase = GetGamesUseCase(gameRepository)
         gamesViewModel = GameViewModel(fakeUseCase)
     }
 

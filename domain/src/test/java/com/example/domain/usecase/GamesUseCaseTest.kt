@@ -18,19 +18,19 @@ import org.junit.runner.RunWith
 class GamesUseCaseTest {
     @get:Rule
     var instantTaskExecutorRule = InstantTaskExecutorRule()
-    private lateinit var accountRepository: GamesRepo
+    private lateinit var gameRepository: GamesRepo
     private lateinit var subject: GetGamesUseCase
     private lateinit var api: GameFakeService
 
     @Before
     fun setup() {
         api = GameFakeService(FakeDataGenerator.amiibo)
-        accountRepository = GamesRepoImpl(RemoteDataSourceImpl(api))
-        subject = GetGamesUseCase(accountRepository)
+        gameRepository = GamesRepoImpl(RemoteDataSourceImpl(api))
+        subject = GetGamesUseCase(gameRepository)
     }
 
     @Test
-    fun GamesUseCaseTest() = runBlocking {
+    fun gamesUseCaseTest() = runBlocking {
         val res = subject.execute()
         Truth.assertThat(res).isNotNull()
     }
