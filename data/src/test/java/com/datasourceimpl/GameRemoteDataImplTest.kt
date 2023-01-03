@@ -1,11 +1,11 @@
-package com.example.mvvmcleanarchidemo1.data.repository.datasourceimpl
+package com.datasourceimpl
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.example.mvvmcleanarchidemo1.data.api.FakeNetworkService
+import com.example.core_testing.FakeDataGenerator
+import com.example.core_testing.GameFakeService
 import com.example.data.repository.datasourceimpl.RemoteDataSourceImpl
-import com.example.mvvmcleanarchidemo1.data.repository.FakeDataGenerator
-import com.google.common.truth.Truth.assertThat
+import com.google.common.truth.Truth
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Rule
@@ -17,17 +17,17 @@ class GameRemoteDataImplTest {
     @get:Rule
     var instantTaskExecutorRule = InstantTaskExecutorRule()
     private lateinit var datasource: RemoteDataSourceImpl
-    private lateinit var api: FakeNetworkService
+    private lateinit var api: GameFakeService
 
     @Before
     fun setup() {
-        api = FakeNetworkService(FakeDataGenerator.amiibo)
+        api = GameFakeService(FakeDataGenerator.amiibo)
         datasource = RemoteDataSourceImpl(api)
     }
 
     @Test
     fun getGamesDataTest() = runBlocking {
         val res = datasource.getGamesData()
-        assertThat(res).isNull()
+        Truth.assertThat(res).isNull()
     }
 }

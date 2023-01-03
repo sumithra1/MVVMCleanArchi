@@ -1,4 +1,4 @@
-package com.example.mvvmcleanarchidemo1.data.repository
+package com.example.core_testing
 
 import com.example.data.models.Amiibo
 import com.example.data.models.GamesAPIResponse
