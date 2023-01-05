@@ -3,7 +3,7 @@ package com.example.data.models
 
 import com.google.gson.annotations.SerializedName
 
-data class GamesAPIResponse(
+data class GamesAPIResponseDTO(
     @SerializedName("amiibo")
-    val amiibo: List<Amiibo>
+    val amiibo: List<AmiiboDTO>
 )

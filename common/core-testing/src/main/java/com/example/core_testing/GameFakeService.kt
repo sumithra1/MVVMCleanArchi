@@ -1,11 +1,11 @@
 package com.example.core_testing
 
 import com.example.data.api.GamesApiService
-import com.example.data.models.GamesAPIResponse
+import com.example.data.models.GamesAPIResponseDTO
 
 
-class GameFakeService(private val gamesData: GamesAPIResponse): GamesApiService {
-    override suspend fun getGamesData(): GamesAPIResponse {
+class GameFakeService(private val gamesData: GamesAPIResponseDTO): GamesApiService {
+    override suspend fun getGamesData(): GamesAPIResponseDTO {
         return gamesData
     }
 

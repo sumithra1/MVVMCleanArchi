@@ -1,6 +1,6 @@
 package com.example.mvvmcleanarchidemo1.adapter
 
-import android.content.Context
+
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -11,7 +11,7 @@ import com.example.mvvmcleanarchidemo1.databinding.GamesListItemBinding
 import javax.inject.Inject
 
 class GamesAdapter @Inject constructor(
-    val context: Context,
+
     private val gamesItem: ArrayList<Amiibo>
 ) : RecyclerView.Adapter<GamesAdapter.MyViewHolder>() {
 

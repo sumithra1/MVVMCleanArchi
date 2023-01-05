@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         recyclerView.apply {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(this@MainActivity)
-            myAdapter = GamesAdapter(this@MainActivity, arrayListOf())
+            myAdapter = GamesAdapter(arrayListOf())
             adapter = myAdapter
         }
     }

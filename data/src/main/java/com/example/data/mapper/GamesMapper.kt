@@ -1,15 +1,15 @@
 package com.example.data.mapper
 
-import com.example.data.models.Amiibo
-import com.example.data.models.GamesAPIResponse
+import com.example.data.models.AmiiboDTO
+import com.example.data.models.GamesAPIResponseDTO
 import com.example.domain.entity.GamesDomainMario
 
 
-fun mapToGameDomain(gamesAPIResponseMario: GamesAPIResponse): GamesDomainMario {
+fun mapToGameDomain(gamesAPIResponseMario: GamesAPIResponseDTO): GamesDomainMario {
     return GamesDomainMario(mapToGameAmiibo(gamesAPIResponseMario.amiibo))
 }
 
-fun mapToGameAmiibo(amiibo: List<Amiibo>): List<com.example.domain.entity.Amiibo> {
+fun mapToGameAmiibo(amiibo: List<AmiiboDTO>): List<com.example.domain.entity.Amiibo> {
 
     val list = amiibo.map {
         com.example.domain.entity.Amiibo(
