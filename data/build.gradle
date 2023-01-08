@@ -33,7 +33,6 @@ android {
 
 dependencies {
     implementation project(':domain')
-    testImplementation project(path: ':common:core-testing')
     def worker_hilt="1.0.0"
     def hilt = "2.40.4"
     def hilt_compiler = "2.38.1"

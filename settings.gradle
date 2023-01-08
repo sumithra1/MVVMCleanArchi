@@ -16,5 +16,4 @@ rootProject.name = "mvvmCleanarchiDemo1"
 include ':app'
 include ':domain'
 include ':data'
-include ':common'
-include ':common:core-testing'
+

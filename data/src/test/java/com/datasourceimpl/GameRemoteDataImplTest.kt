@@ -2,8 +2,6 @@ package com.datasourceimpl
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.example.core_testing.FakeDataGenerator
-import com.example.core_testing.GameFakeService
 import com.example.data.repository.datasourceimpl.RemoteDataSourceImpl
 import com.google.common.truth.Truth
 import kotlinx.coroutines.runBlocking
@@ -17,6 +15,7 @@ class GameRemoteDataImplTest {
     @get:Rule
     var instantTaskExecutorRule = InstantTaskExecutorRule()
     private lateinit var datasource: RemoteDataSourceImpl
+
     private lateinit var api: GameFakeService
 
     @Before

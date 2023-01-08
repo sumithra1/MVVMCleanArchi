@@ -2,13 +2,11 @@ package com.example.mvvmcleanarchidemo1.presentation.viewmodel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.example.core_testing.GameFakeService
 
 import com.example.data.repository.GamesRepoImpl
 import com.example.data.repository.datasourceimpl.RemoteDataSourceImpl
 import com.example.domain.repository.GamesRepo
 import com.example.domain.usecase.GetGamesUseCase
-import com.example.core_testing.FakeDataGenerator
 import com.example.mvvmcleanarchidemo1.viewmodels.GameViewModel
 import com.google.common.truth.Truth.assertThat
 import org.junit.Before
@@ -24,7 +22,6 @@ class GameViewModelTest {
     private lateinit var fakeUseCase: GetGamesUseCase
     private lateinit var fakeNetworkService: GameFakeService
     private lateinit var gameRepository: GamesRepo
-
 
 
     @Before

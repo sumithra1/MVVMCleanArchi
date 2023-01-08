@@ -1,4 +1,4 @@
-package com.example.core_testing
+package com.datasourceimpl
 
 import com.example.data.models.AmiiboDTO
 import com.example.data.models.GamesAPIResponseDTO
